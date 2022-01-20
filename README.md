@@ -55,27 +55,31 @@ Este json irá criar um flow **`HA-Combustiveis`** e vários sub-flows de suport
 ![node-ha-combustiveis-config](/images/node-ha-combustiveis-config.PNG "node-ha-combustiveis-config")
 
 Nos campos `user` e `password` colocar os dados do utilizador criado anteriormente no addon MariaDB
+
 No campo `database` colocar `combustiveis`, que deverá ser a database criada no addon MariaDB
 
 - Fazer **`Deploy`** no NodeRED e após isso iniciar o node `One Time Only`, que irá criar a estrutura de tabelas necessária na base de dados
 	> Este processo é só necessário correr a primeira vez após a instalação
 	
 - Após a estrutura de tabelas ser criada, devemos iniciar o `Update Distritos`
-- Esperar que fique no estado `Finished`![node-distritos-finish](/images/node-distritos-finish.PNG "node-distritos-finish")
+- Esperar que fique no estado `Finished`<br>![node-distritos-finish](/images/node-distritos-finish.PNG "node-distritos-finish")
 ***
 - Agora iniciamos o flow `Update Postos` e aguardamos que o também fique no estado `Finished`
 	>Enquanto este flow está a correr, temos a informação do distrito que está a ser processado
+	>
 	>Este flow pode demorar alguns minutos a correr
 	
 
 ***
 - Quando o flow anterior terminar, podemos então iniciar o `Update Precos from DGEG`
 > O flow `Update Precos from DGEG` demora vários minutos a correr e podemos acompanhar o estado do mesmo vendo quantos postos já foram atualizados
-![node-update-precos](/images/node-update-precos.PNG "node-update-precos")
+> 
+> ![node-update-precos](/images/node-update-precos.PNG "node-update-precos")
 
 
 ***
 ***Sensores Home Assistant***
+
 Neste momento já temos toda a informação atualizada na nossa base de dados, vamos configurar os sensores a serem criados no Home Assistant
 
 É logo criado um sensor `sensor.marcas_combustiveis` que tem como atributo a lista de todas as marcas possíveis de serem configuradas nos descontos.
