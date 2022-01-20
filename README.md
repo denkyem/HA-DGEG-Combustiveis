@@ -46,6 +46,7 @@ rights:
 **NodeRED**
 
 Importar o json que se encontra na pasta `nodered` [ha-dged-combustiveis.json](/nodered/ha-dged-combustiveis.json "ha-dged-combustiveis.json")
+
 Este json irá criar um flow **`HA-Combustiveis`** e vários sub-flows de suporte
 
 - É necessário configurar o node `ha-combustiveis`
