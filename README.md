@@ -3,35 +3,8 @@ Node-RED flow que importa o preço dos combustiveis do site da DGEG para base de
 
 ## Como funciona?
 
-```mermaid
-sequenceDiagram
-NodeRED -->> DGEG: GET Distritos
-DGEG ->> NodeRED: 
-Note right of DGEG: Guarda a lista de distritos na BD
-NodeRED ->> MariaDB: 
+![mermaid](/images/mermaid.PNG "mermaid")
 
-
-NodeRED -->> DGEG: GET Postos
-DGEG ->> NodeRED: 
-Note right of DGEG: Guarda a lista de postos na BD
-NodeRED ->> MariaDB: 
-
-
-NodeRED -->> DGEG: GET Precos
-DGEG ->> NodeRED: 
-Note right of DGEG: Guarda o preco de todos <br>os combustiveis na BD
-NodeRED ->> MariaDB: 
-
-
-NodeRED -->> Home Assistant: GET device_tracker info
-Home Assistant ->> NodeRED: 
-NodeRED -->> MariaDB: GET Precos com base na localização do device_tracker
-MariaDB ->> NodeRED: 
-NodeRED ->> Home Assistant: Create Sensors
-
-Note left of Home Assistant: Cria 3 sensores relacionado com<br> o preço do combustível selecionado
-
-```
 ## Requisitios:
 - Home Assistant
 - Addons:
