@@ -20,6 +20,7 @@ Todos os componentes têm de estar instalados e configurados.
 Na configuração do Addon MariaDB é necessário adicionar uma nova base de dados e um login para a mesma.
 
 > o nome da nova base de dados tem mesmo de ser `combustiveis`
+> 
 > não esquecer de atribuir os `rights` para o login criado
 
 Deverá ficar algo deste género
