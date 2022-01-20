@@ -104,4 +104,11 @@ Para configurar os sensores, apenas temos de alterar os nodes `CONFIG`
 |desconto    |0.12       |Desconto por litro em euros
 
 ---
+
+**ToDo**
+
+- Adicionar exemplo de ações e notificações mobile (iOS e Android)
+- Adicionar opção de carregadores electricos
+
+---
 **NOTA:** Este projecto não tem qualquer relação com a DGEG e apenas irá funcionar enquanto o formato da API não for alterado
