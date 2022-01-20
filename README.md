@@ -69,14 +69,14 @@ rights:
 - Reiniciar o addon MariaDB
 ***
 **NodeRED**
-Importar o json que se encontra na pasta `nodered` [ha-dged-combustiveis.json](https://github.com/denkyem/HA-DGEG-Combustiveis/blob/main/nodered/ha-dged-combustiveis.json "ha-dged-combustiveis.json")
+Importar o json que se encontra na pasta `nodered` [ha-dged-combustiveis.json](/nodered/ha-dged-combustiveis.json "ha-dged-combustiveis.json")
 Este json irá criar um flow **`HA-Combustiveis`** e vários sub-flows de suporte
 
 - É necessário configurar o node ha-combustiveis
 
-![node-ha-combustiveis](/HA-DGEG-Combustiveis/main/images/node-ha-combustiveis.PNG "node-ha-combustiveis")
+![node-ha-combustiveis](/images/node-ha-combustiveis.PNG "node-ha-combustiveis")
 
-![node-ha-combustiveis-config](/HA-DGEG-Combustiveis/main/images/node-ha-combustiveis-config.PNG "node-ha-combustiveis-config")
+![node-ha-combustiveis-config](/images/node-ha-combustiveis-config.PNG "node-ha-combustiveis-config")
 
 Nos campos `user` e `password` colocar os dados do utilizador criado anteriormente no addon MariaDB
 No campo `database` colocar `combustiveis`, que deverá ser a database criada no addon MariaDB
@@ -84,7 +84,7 @@ No campo `database` colocar `combustiveis`, que deverá ser a database criada no
 - Fazer **`Deploy`** no NodeRED e após isso iniciar o node `One Time Only`, que irá criar a estrutura de tabelas necessária na base de dados
 	> Este processo é só necessário correr a primeira vez após a instalação
 - Após a estrutura de tabelas ser criada, devemos iniciar o `Update Distritos`
-- Esperar que fique no estado `Finished`![node-distritos-finish](/HA-DGEG-Combustiveis/main/images/node-distritos-finish.PNG "node-distritos-finish")
+- Esperar que fique no estado `Finished`![node-distritos-finish](/images/node-distritos-finish.PNG "node-distritos-finish")
 - Agora iniciamos o flow `Update Postos` e aguardamos que o também fique no estado `Finished`
 	>Enquanto este flow está a correr, temos a informação do distrito que está a ser processado
 	>Este flow pode demorar alguns minutos a correr
