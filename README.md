@@ -109,7 +109,7 @@ Para configurar os sensores, apenas temos de alterar os nodes `CONFIG`
 **ToDo**
 
 - Adicionar exemplo de ações e notificações mobile (iOS e Android)
-- Adicionar lista para excluir Marcas dos resultados
+- ~~Adicionar lista para excluir Marcas dos resultados~~
 - Adicionar opção de carregadores electricos
 
 ---
