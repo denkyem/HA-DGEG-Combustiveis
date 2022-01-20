@@ -81,7 +81,10 @@ Neste momento já temos toda a informação atualizada na nossa base de dados, v
 É logo criado um sensor `sensor.marcas_combustiveis` que tem como atributo a lista de todas as marcas possíveis de serem configuradas nos descontos.
 
 Para configurar os sensores, apenas temos de alterar os nodes `CONFIG`
+
 ![node-config](/images/node-config.PNG "node-config")
+
+![node-config-open](/images/node-config-open.PNG "node-config-open")
 
 |Const          |Exemplo       |Descrição|
 |---------------|--------------|---------|
