@@ -112,3 +112,9 @@ Para configurar os sensores, apenas temos de alterar os nodes `CONFIG`
 
 ---
 **NOTA:** Este projecto não tem qualquer relação com a DGEG e apenas irá funcionar enquanto o formato da API não for alterado
+
+
+
+## Thank you
+
+<a href="https://www.buymeacoffee.com/denkyem" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"></a>
