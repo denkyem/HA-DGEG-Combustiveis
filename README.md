@@ -1,3 +1,4 @@
+
 # HA-DGEG-Combustiveis
 Node-RED flow que importa o preço dos combustiveis do site da DGEG para base de dados MariaDB, permitindo depois obter os preços mais baratos com base em coordenadas GPS, criando vários sensores no Home Assistant
 
@@ -15,7 +16,7 @@ Node-RED flow que importa o preço dos combustiveis do site da DGEG para base de
 
 ## Instalação
 Todos os componentes têm de estar instalados e configurados.
-
+***
 **MariaDB**
 Na configuração do Addon MariaDB é necessário adicionar uma nova base de dados e um login para a mesma.
 
@@ -43,10 +44,11 @@ rights:
 - Reiniciar o addon MariaDB
 ***
 **NodeRED**
+
 Importar o json que se encontra na pasta `nodered` [ha-dged-combustiveis.json](/nodered/ha-dged-combustiveis.json "ha-dged-combustiveis.json")
 Este json irá criar um flow **`HA-Combustiveis`** e vários sub-flows de suporte
 
-- É necessário configurar o node ha-combustiveis
+- É necessário configurar o node `ha-combustiveis`
 
 ![node-ha-combustiveis](/images/node-ha-combustiveis.PNG "node-ha-combustiveis")
 
@@ -57,9 +59,42 @@ No campo `database` colocar `combustiveis`, que deverá ser a database criada no
 
 - Fazer **`Deploy`** no NodeRED e após isso iniciar o node `One Time Only`, que irá criar a estrutura de tabelas necessária na base de dados
 	> Este processo é só necessário correr a primeira vez após a instalação
+	
 - Após a estrutura de tabelas ser criada, devemos iniciar o `Update Distritos`
 - Esperar que fique no estado `Finished`![node-distritos-finish](/images/node-distritos-finish.PNG "node-distritos-finish")
+***
 - Agora iniciamos o flow `Update Postos` e aguardamos que o também fique no estado `Finished`
 	>Enquanto este flow está a correr, temos a informação do distrito que está a ser processado
 	>Este flow pode demorar alguns minutos a correr
+	
+
+***
 - Quando o flow anterior terminar, podemos então iniciar o `Update Precos from DGEG`
+> O flow `Update Precos from DGEG` demora vários minutos a correr e podemos acompanhar o estado do mesmo vendo quantos postos já foram atualizados
+![node-update-precos](/images/node-update-precos.PNG "node-update-precos")
+
+
+***
+***Sensores Home Assistant***
+Neste momento já temos toda a informação atualizada na nossa base de dados, vamos configurar os sensores a serem criados no Home Assistant
+
+É logo criado um sensor `sensor.marcas_combustiveis` que tem como atributo a lista de todas as marcas possíveis de serem configuradas nos descontos.
+
+Para configurar os sensores, apenas temos de alterar os nodes `CONFIG`
+![node-config](/images/node-config.PNG "node-config")
+
+|Const          |Exemplo       |Descrição|
+|---------------|--------------|---------|
+|entity_id      |zone.home     |Entidade do Home Assistant que tenha Longitude e Latitude como atributos (ex: zonas e device_trackers)
+|combustivel    |DIESEL        |Qual o tipo de combustível que queremos usar (DIESEL, GASOLINA, GPL)
+|distancia      |4             |Raio de distância (em km) com base nas coordenadas do `entity_id`
+|descontos      |`JSON`        |Lista em formado JSON com possíveis descontos em combustível
+
+**Descontos**
+|Campo       |Exemplo    |Descrição  |
+|------------|-----------|-----------|
+|marca       |REPSOL     |Marca de combustível (ver `sensor.marcas_combustiveis`)
+|desconto    |0.12       |Desconto por litro em euros
+
+---
+**NOTA:** Este projecto não tem qualquer relação com a DGEG e apenas irá funcionar enquanto o formato da API não for alterado
