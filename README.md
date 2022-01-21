@@ -10,6 +10,7 @@ Node-RED flow que importa o preço dos combustiveis do site da DGEG para base de
 - Home Assistant
 - Addons:
 	- NodeRED
+		- Instalar [node-red-contrib-stackhero-mysql](https://flows.nodered.org/node/node-red-contrib-stackhero-mysql)
 	- MariaDB
 - Custom Components:
 	- Node-RED Companion Integration (HACS)
