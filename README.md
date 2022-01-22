@@ -64,7 +64,7 @@ No campo `database` colocar `combustiveis`, que deverá ser a database criada no
 	> Este processo é só necessário correr a primeira vez após a instalação
 	
 - Após a estrutura de tabelas ser criada, devemos iniciar o `Update Distritos`
-- Esperar que fique no estado `Finished`<br>![node-distritos-finish](/images/node-distritos-finish.PNG "node-distritos-finish")
+- Esperar que fique no estado `green`<br>![node-distritos-finish](/images/node-distritos-finish.PNG "node-distritos-finish")
 ***
 - Agora iniciamos o flow `Update Postos` e aguardamos que o também fique no estado `Finished`
 	>Enquanto este flow está a correr, temos a informação do distrito que está a ser processado
