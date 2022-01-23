@@ -19,6 +19,7 @@ Node-RED flow que importa o preço dos combustiveis do site da DGEG para base de
 Todos os componentes têm de estar instalados e configurados.
 ***
 **MariaDB**
+
 Na configuração do Addon MariaDB é necessário adicionar uma nova base de dados e um login para a mesma.
 
 > o nome da nova base de dados tem mesmo de ser `combustiveis`
