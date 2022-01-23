@@ -16,7 +16,7 @@ Node-RED flow que importa o preço dos combustiveis do site da DGEG para base de
 	- Node-RED Companion Integration (HACS)
 
 ## Instalação
-Todos os componentes têm de estar instalados e configurados.
+Todos os requisitos têm de estar instalados e configurados.
 ***
 **MariaDB**
 
