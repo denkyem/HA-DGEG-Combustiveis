@@ -109,6 +109,15 @@ Para configurar os sensores, apenas temos de alterar os nodes `CONFIG`
 
 ---
 
+## Video Instalação
+
+O youtuber [Jota Pombo](https://www.youtube.com/c/JotaPombo) fez um video a explicar todo o processo de instalação e configuração.
+
+[![Queres Poupar Com Combustíveis Mais Baratos ?](https://img.youtube.com/vi/PExgkNaSkpA/0.jpg)](https://www.youtube.com/watch?v=PExgkNaSkpA "Queres Poupar Com Combustíveis Mais Baratos ?")
+
+
+---
+
 **ToDo**
 
 - Adicionar exemplo de ações e notificações mobile (iOS e Android)<br>![notification-ios](/images/ios-notification.png "notification-ios")
