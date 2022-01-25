@@ -97,7 +97,7 @@ Para configurar os sensores, apenas temos de alterar os nodes `CONFIG`
 |---------------|--------------|---------|
 |entity_id      |zone.home     |Entidade do Home Assistant que tenha Longitude e Latitude como atributos (ex: zonas e device_trackers)
 |combustivel    |DIESEL        |Qual o tipo de combustível que queremos usar (DIESEL, GASOLINA, GPL)
-|distancia      |4             |Raio de distância (em km) com base nas coordenadas do `entity_id`
+|distancia      |4             |Raio de distância (em km) com base nas coordenadas do `entity_id`. Se não forem encontrados postos dentro da distância configurada, a pesquisa vai expandindo até encontrar pelo menos 1 posto ou até 50km.
 |not_marcas     |BP,GALP       |Lista de marcas a excluir dos resultados, separada por virgulas
 |descontos      |`JSON`        |Lista em formado JSON com possíveis descontos em combustível
 
